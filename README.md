@@ -3,7 +3,7 @@ Note: Its cli tool, so it will work on cmd or terminal
 1. Python - v3.7.4
 2. library- Boto3
 
-### Before you can begin using script, you should set up authentication credentials. 
+### Before you can begin using this script, you should set up authentication credentials. 
 - Credentials for your AWS account can be found in the IAM Console. 
 - You can create or use an existing user. 
 - Go to manage access keys and generate a new set of keys.
