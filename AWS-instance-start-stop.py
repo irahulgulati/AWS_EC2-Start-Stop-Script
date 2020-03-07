@@ -22,8 +22,6 @@ def available_zone():
     AllAvailabilityZones=True,
     DryRun=False
                                             )
-    # print(response["AvailabilityZones"][0]["ZoneName"])
-    # print (response)
     for i in range(len(response["AvailabilityZones"])):
         resultedZones.append(response["AvailabilityZones"][i]["ZoneName"])
     if(len(resultedZones)>0):
@@ -53,7 +51,6 @@ def getInstanceid():
                                             )
             for i in range(len(response['Reservations'])):
                 resulted_ids.append(response['Reservations'][i]['Instances'][0]['InstanceId'])
-                # print(len(response['Reservations'][0]['Instances']))
             if(len(resulted_ids)>0):
                 print(resulted_ids)
                 getInstanceStatus()
@@ -70,7 +67,7 @@ def getInstanceid():
         getInstanceid()
 
 def getInstanceStatus():
-    getId=input("Please enter one instance id")
+    getId=input("Please enter one instance id : ")
     if getId in resulted_ids:
         response = ec2.describe_instance_status(
             InstanceIds=[getId,],IncludeAllInstances=True
@@ -116,11 +113,7 @@ def startInstance(id):
     ],
 )                 
 
-def main():
-    available_zone()
-
-
 if __name__ == "__main__":
     intro()
-    main()
+    available_zone()
 
